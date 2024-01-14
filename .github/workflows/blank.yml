@@ -1,0 +1,14 @@
+on: [push]
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: dreamli action step
+        id: hello
+        uses: dreamli0/my-action@main
+        with:
+          hi-there: ${{ secrets.AWS }}
+      - name: Get the output time
+        run: echo "The Greeting time was "
